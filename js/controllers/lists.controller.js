@@ -42,8 +42,8 @@
         id = this.parentElement.nextElementSibling.id
         list = List.find(parseInt(id))[0]
         $(`option[value=${list.title}]`).remove()
-        List.destroy(parseInt(id))
         Task.destroyListTasks(list.title)
+        List.destroy(parseInt(id))
         this.parentElement.parentElement.remove()
         removeTaskList()
       })

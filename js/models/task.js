@@ -9,12 +9,13 @@
       store.tasks.push(this)
     }
 
-    static destroyListTasks(list){
+    static destroyListTasks(title){
       for (var i = 0; i < Task.all.length; i++) {
-        if(list === Task.all[i].list){
+        if(Task.all[i] !==undefined && title === Task.all[i].list[0].title){
           delete Task.all[i]
         }
       }
+    
     }
 
     static find(id){
